@@ -1,0 +1,17 @@
+pipeline {
+agent any
+stages {
+stage('Hello') {
+steps {
+echo "Hello world"
+}
+}
+}
+post{
+always{
+emailext to: "jagadeeshreddy280@gmail.com",
+subject: "job status",
+body: "successfully completed"
+}
+}
+} 
